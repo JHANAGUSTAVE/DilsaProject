@@ -1,0 +1,110 @@
+.dark{
+    background: #162144;
+    color:#162144 !important;
+}
+
+.dark .date-time-picker input{
+    background-color: transparent;
+    color:#162144;
+}
+
+/* .dark .color-dark{
+    color:#fff !important;
+
+} */
+.dark .d-flex.justify-content-end.sm-p {
+    color: #fff;
+}
+.dark h3,.dark .d-flex.justify-content-end.sm-p{
+    color:#fff !important;
+}
+.dark .loto-table thead {
+     background: transparent; 
+    border-radius: 5px;
+    border: none;
+    color: #111828;
+}
+.cursor-pointer{
+    cursor: pointer;
+    color: blue;
+  }
+.darkli:not(.color-blue-dark) h4{
+    color:#162144 !important;
+}
+.dark button#ddown1__BV_toggle_ {
+    color: #427ABD !important;
+}
+.dark .btn,.color-dark{
+    color:#162144 ;
+}
+
+.dark .user_img{
+    background-color: #fff;
+}
+.dark a{
+    color:#162144 ;
+    font-weight: bold;
+}
+.dark a.router-link-active{
+    color:#162144 !important;
+    font-weight: bold;
+    border-left: 5px solid #3cc1c7;
+}
+.dark #sidebar li a.router-link-active img{
+    background-color:#162144 !important;
+}
+.dark .color-grey{
+    color:#AAB0BE !important;
+}
+.dark nav#sidebar,.dark .sidebar-header {
+    background: #AAB0BE !important;
+}
+.dark .wrapper.dark.content-wrapper__size_max {
+    background: #162144;
+    color:#fff;
+}
+.dark .setting button.btn.mt-2.btn-none{
+    background: #162144 !important;
+    color:#fff !important; 
+}
+.dark .card.widget__box-shadow.border-white {
+    background: #6D7A8E;
+}
+.dark .card-body {
+    background: #AAB0BE;
+}
+.dark .setting h4.setting{
+    color:#fff !important;
+}
+.dark .dashboard .card-body {
+    background:none;
+}
+.dark .dashboard .text-normal-title, h4 {
+    color: none !important;
+}
+.dark .overview .card-body {
+    background: #6D7A8E;
+}
+.dark header.card-header.bg-white.border-white {
+    background: #AAB0BE !important;
+    border: none;
+}
+.dark .overview header.card-header.bg-white.border-white {
+    background: #6D7A8E !important;
+    border: none;
+}
+.dark .overview footer.card-footer {
+    background: #6D7A8E !important;
+    border: none;
+}
+.dark footer.card-footer {
+        background: #AAB0BE !important;
+        border: none;
+    }
+.dark .transactionstablegrad{
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.0001) -28.49%,
+       #aab0be 90.85%
+    )!important;
+}
