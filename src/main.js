@@ -8,6 +8,7 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
 
+// Make BootstrapVue available throughout your project
 /* eslint-disable no-new */
 new Vue({
   router,
