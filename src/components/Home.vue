@@ -70,7 +70,7 @@
 		<section class="page-section bg-light" id="produits">
 			<div class="container">
 				<div class="text-center">
-					<h2 class="section-heading text-uppercase">Produits</h2>
+					<h2 class="section-heading text-uppercase">Produits {{JSON.stringify(products)}}</h2>
 					<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
 				</div>
 				<div class="row">
@@ -598,7 +598,23 @@
 		props: {
 			msg: String
 		},
+		created() {
+			this.callProducts();
+		},
 		// components: {Navbar,
 		// },
+		methods:{
+			callProducts(){
+				this.$store.dispatch("callProducts");
+			},
+		},
+		watch:{
+			
+		},
+		computed: {
+			products() {
+				return this.$store.getters.products;
+			},
+		}
 	}
 </script>
