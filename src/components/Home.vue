@@ -11,31 +11,45 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-						<li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-						<li class="nav-item"><a class="nav-link" href="#produits">Produits</a></li>
-						<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-						<li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-						<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+						<li class="nav-item"><a class="nav-link" href="#services">{{$t("Serv")}}</a></li>
+						<li class="nav-item"><a class="nav-link" href="#produits">{{$t("Prod")}}</a></li>
+						<li class="nav-item"><a class="nav-link" href="#about">{{$t("Abt")}}</a></li>
+						<li class="nav-item"><a class="nav-link" href="#team">{{$t("Tm")}}</a></li>
+						<li class="nav-item"><a class="nav-link" href="#contact">{{$t("Ctc")}}</a></li>
 					</ul>
+					<div>
+						<ul> <b-dropdown variant="outline-warning" split split-href="#" :text="$t('Lang')" class="m-2 pl-2">
+							<li v-for="entry in languages" :key="entry.title">
+								<b-dropdown-item @click="(e)=>changeLocale(entry.language)" href="#">
+									<span class="ml-2"><flag :iso="entry.flag" v-bind:squared=false /> {{entry.title}}</span>
+								</b-dropdown-item>
+							</li>
+							</b-dropdown>
+						</ul> 
+					</div>
 				</div>
 			</div>
 		</nav>
 		<!-- Masthead-->
 		<header class="masthead">
 			<div class="container">
-				<section style="background-color: rgba(0, 0, 0, 0.8);padding: 20px; margin-bottom: 4rem;"><div class="masthead-subheading">Welcome To Diesel Injection Laboratory S.A!</div>
-					<div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+				<section style="background-color: rgba(0, 0, 0, 0.8);padding: 20px; margin-bottom: 4rem;"><div class="masthead-subheading">{{$t("WTDILSA")}}</div>
+					<div class="masthead-heading text-uppercase">{{$t("ItsNiceToMeetYou")}}</div>
 				</section> 
-				<a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
+				<div>
+					<button v-for="entry in languages" :key="entry.title" @click="changeLocale(entry.language)">
+						<flag :iso="entry.flag" v-bind:squared=false /> {{entry.title}}
+					</button>
+				</div>
+				<a class="btn btn-primary btn-xl text-uppercase" href="#services">{{$t("tellMeMore")}}</a>
 			</div>
 		</header>
 		<!-- Services-->
 		<section class="page-section" id="services">
 			<div class="container">
 				<div class="text-center">
-					<h3 class="section-heading text-uppercase">SUPPORT AND CUSTOMER SERVICE</h3>
-					<h4 class="section-subheading text-muted">The company is very sensitive to the customer 
-					satisfaction. A team of two persons is dedicated five days a week to answer the customer's inquiries and complains.</h4>
+					<h3 class="section-heading text-uppercase">{{$t("SACS")}}</h3>
+					<h4 class="section-subheading text-muted">{{$t("SACSTXT")}}</h4>
 				</div>
 				<div class="row text-center">
 					<div class="col-md-4">
@@ -43,24 +57,24 @@
 							<i class="fas fa-circle fa-stack-2x text-primary"></i>
 							<i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
 						</span>
-						<h4 class="my-3">Engine</h4>
-						<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+						<h4 class="my-3">{{$t("adn")}}</h4>
+						<p class="text-muted">{{$t("adntxt")}}</p>
 					</div>
 					<div class="col-md-4">
 						<span class="fa-stack fa-4x">
 							<i class="fas fa-circle fa-stack-2x text-primary"></i>
 							<i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
 						</span>
-						<h4 class="my-3">Engine</h4>
-						<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+						<h4 class="my-3">{{$t("Rad")}}</h4>
+						<p class="text-muted">{{$t("Radtxt")}}</p>
 					</div>
 					<div class="col-md-4">
 						<span class="fa-stack fa-4x">
 							<i class="fas fa-circle fa-stack-2x text-primary"></i>
 							<i class="fas fa-lock fa-stack-1x fa-inverse"></i>
 						</span>
-						<h4 class="my-3">Engine</h4>
-						<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+						<h4 class="my-3">{{$t("SACS")}}</h4>
+						<p class="text-muted">{{$t("SACSTXT1")}}</p>
 					</div>
 				</div>
 			</div>
@@ -174,7 +188,7 @@
 		<section class="page-section" id="about">
 			<div class="container">
 				<div class="text-center">
-					<h2 class="section-heading text-uppercase">About US</h2>
+					<h2 class="section-heading text-uppercase">{{$t("Abt")}}</h2>
 					<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
 				</div>
 				<ul class="timeline">
@@ -182,7 +196,6 @@
 						<div class="timeline-image"><img class="rounded-circle img-fluid" src="@/assets/img/about/1.jpg" alt="..." /></div>
 						<div class="timeline-panel">
 							<div class="timeline-heading">
-								<h4>1992-2021</h4>
 								<h4 class="subheading">Our Humble Beginnings</h4>
 							</div>
 							<div class="timeline-body"><p class="text-muted">DIL  is the foremost diesel laboratory in Haiti. It is specialized in testing, repairing and calibrating pumps, injectors, turbo chargers and most types of other diesel injectors (marine and generators applications). </p></div>
@@ -192,7 +205,6 @@
 						<div class="timeline-image"><img class="rounded-circle img-fluid" src="@/assets/img/about/2.jpg" alt="..." /></div>
 						<div class="timeline-panel">
 							<div class="timeline-heading">
-								<h4>March 2011</h4>
 								<h4 class="subheading">An Agency is Born</h4>
 							</div>
 							<div class="timeline-body"><p class="text-muted">Diesel Injection Laboratory SA ( Fomer Precision Injection Shop ) is a well established haitian diesel workshop company. The company has been operating in Haiti since 1992. </p></div>
@@ -202,7 +214,6 @@
 						<div class="timeline-image"><img class="rounded-circle img-fluid" src="@/assets/img/about/3.jpg" alt="..." /></div>
 						<div class="timeline-panel">
 							<div class="timeline-heading">
-								<h4>December 2015</h4>
 								<h4 class="subheading">Transition to Full Service</h4>
 							</div>
 							<div class="timeline-body"><p class="text-muted">Highest standard of performance in delivering services is one of the key of success of the company. PIS keeps an open eye on the latest development of the latest technologies and equipment available worldwide in the field of diesel systems. The company is also interested in the development of clean energy such biodiesel, solar and wind energies. </p></div>
@@ -212,7 +223,6 @@
 						<div class="timeline-image"><img class="rounded-circle img-fluid" src="@/assets/img/about/4.jpg" alt="..." /></div>
 						<div class="timeline-panel">
 							<div class="timeline-heading">
-								<h4>July 2020</h4>
 								<h4 class="subheading">Phase Two Expansion</h4>
 							</div>
 							<div class="timeline-body"><p class="text-muted">One of its goals is to meet the needs of its customers in the respect of the environment. The company  purchased new Hartridge equipment Sabre CRI Master and  EU INJECTOR TESTER AND ACCESSORIES and Motortool MT-5600D, .
@@ -300,8 +310,8 @@
 		<section class="page-section" id="contact">
 			<div class="container">
 				<div class="text-center">
-					<h2 class="section-heading text-uppercase">Contact Us</h2>
-					<h3 class="section-subheading text-muted">DIL is located at 29, chareron street, Port-au-Prince, Haiti in  a two stages built facility of 600 m2. At this time, the company operates also at 29 Lafleur Ducheine street  for the administration and storage and the modern workshop in a hall of 200 m2.</h3>
+					<h2 class="section-heading text-uppercase">{{$t("ctu")}}</h2>
+					<h3 class="section-subheading text-muted">{{$t("ctutxt")}}</h3>
 				</div>
 				<!-- * * * * * * * * * * * * * * *-->
 				<!-- * * SB Forms Contact Form * *-->
@@ -593,10 +603,20 @@
 
 <script>
 	// import { Navbar } from "@/components/Navbar"; 
+	import i18n from '../../plugins/i18n';
 	export default {
 		name: 'HelloWorld',
 		props: {
 			msg: String
+		},
+		data(){
+			return {
+				languages : [
+					{ flag: 'us', language: 'en', title: 'English' },
+					{ flag: 'es', language: 'es', title: 'Español' },
+					{ flag: 'fr', language: 'fr', title: 'Francais' },
+				]
+			}
 		},
 		created() {
 			this.callProducts();
@@ -607,6 +627,9 @@
 			callProducts(){
 				this.$store.dispatch("callProducts");
 			},
+			changeLocale(locale){
+				i18n.locale = locale;
+			}
 		},
 		watch:{
 			
@@ -618,3 +641,11 @@
 		}
 	}
 </script>
+<style>
+	.dropdown ul.dropdown-menu.show{
+		padding-left: 12px;
+	}
+	.dropdown ul.dropdown-menu.show li{
+		cursor: pointer;
+	}
+</style>
