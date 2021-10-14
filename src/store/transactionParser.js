@@ -11,7 +11,8 @@ export const sendRequest =  function(that, commit, name, data){
             store = 'setProducts'
             break;
         default:
-            commit('setError', "Error: action " + name + " not supported",{root:true});
+            11 + 11
+            //commit('setError', "Error: action " + name + " not supported",{root:true});
 
     }
     console.info(store, storeData)

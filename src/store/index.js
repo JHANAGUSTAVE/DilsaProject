@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import {request} from './api'
-// import createPersistedState from 'vuex-persistedstate'
+import createPersistedState from 'vuex-persistedstate'
 // import i18n from '@/lang/lang'
 
 import {sendRequest } from "./transactionParser";
@@ -23,6 +23,7 @@ export const store = new Vuex.Store({
         },
         setProducts(state, payload) {
             state.products = payload
+            console.info(state.products)
 
             
 
@@ -77,7 +78,7 @@ export const store = new Vuex.Store({
         },
     },
     strict: true,
-    // plugins: [createPersistedState({
-    //     key: 'dilsa'
-    // })]
+    plugins: [createPersistedState({
+        key: 'dilsa'
+    })]
 })

@@ -34,13 +34,9 @@
 		<header class="masthead">
 			<div class="container">
 				<section style="background-color: rgba(0, 0, 0, 0.8);padding: 20px; margin-bottom: 4rem;"><div class="masthead-subheading">{{$t("WTDILSA")}}</div>
-					<div class="masthead-heading text-uppercase">{{$t("ItsNiceToMeetYou")}}</div>
+					<!-- <div class="masthead-heading text-uppercase">{{$t("ItsNiceToMeetYou")}}</div> -->
 				</section> 
-				<div>
-					<button v-for="entry in languages" :key="entry.title" @click="changeLocale(entry.language)">
-						<flag :iso="entry.flag" v-bind:squared=false /> {{entry.title}}
-					</button>
-				</div>
+			
 				<a class="btn btn-primary btn-xl text-uppercase" href="#services">{{$t("tellMeMore")}}</a>
 			</div>
 		</header>
@@ -84,26 +80,12 @@
 		<section class="page-section bg-light" id="produits">
 			<div class="container">
 				<div class="text-center">
-					<h2 class="section-heading text-uppercase">Produits {{JSON.stringify(products)}}</h2>
+					<h2 class="section-heading text-uppercase">Produitss</h2>
 					<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
 				</div>
-				<div class="row">
-					<div class="col-lg-4 col-sm-6 mb-4">
-						<!-- produits item 1-->
-						<div class="portfolio-item">
-							<a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-								<div class="portfolio-hover">
-									<div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-								</div>
-								<img class="img-fluid" src="@/assets/img/portfolio/1.jpg" alt="..." />
-							</a>
-							<div class="portfolio-caption">
-								<div class="portfolio-caption-heading">Diesel</div>
-								<div class="portfolio-caption-subheading text-muted">Illustration</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-sm-6 mb-4">
+				<div class="row" v-if='typeof(products) !== "undefined" && products != null'>
+					<div
+						v-for='product in products' :key='product.id' class="col-lg-4 col-sm-6 mb-4">
 						<!-- produits item 2-->
 						<div class="portfolio-item">
 							<a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
@@ -113,68 +95,8 @@
 								<img class="img-fluid" src="@/assets/img/portfolio/2.jpg" alt="..." />
 							</a>
 							<div class="portfolio-caption">
-								<div class="portfolio-caption-heading">Explore</div>
+								<div class="portfolio-caption-heading">{{product.name}}</div>
 								<div class="portfolio-caption-subheading text-muted">Diesel</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-sm-6 mb-4">
-						<!-- produits item 3-->
-						<div class="portfolio-item">
-							<a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-								<div class="portfolio-hover">
-									<div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-								</div>
-								<img class="img-fluid" src="@/assets/img/portfolio/3.jpg" alt="..." />
-							</a>
-							<div class="portfolio-caption">
-								<div class="portfolio-caption-heading">Finish</div>
-								<div class="portfolio-caption-subheading text-muted">Identity</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-						<!-- produits item 4-->
-						<div class="portfolio-item">
-							<a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
-								<div class="portfolio-hover">
-									<div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-								</div>
-								<img class="img-fluid" src="@/assets/img/portfolio/4.jpg" alt="..." />
-							</a>
-							<div class="portfolio-caption">
-								<div class="portfolio-caption-heading">Lines</div>
-								<div class="portfolio-caption-subheading text-muted">Branding</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-						<!-- produits item 5-->
-						<div class="portfolio-item">
-							<a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
-								<div class="portfolio-hover">
-									<div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-								</div>
-								<img class="img-fluid" src="@/assets/img/portfolio/5.jpg" alt="..." />
-							</a>
-							<div class="portfolio-caption">
-								<div class="portfolio-caption-heading">Southwest</div>
-								<div class="portfolio-caption-subheading text-muted">Diesel</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-sm-6">
-						<!-- produits item 6-->
-						<div class="portfolio-item">
-							<a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
-								<div class="portfolio-hover">
-									<div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-								</div>
-								<img class="img-fluid" src="@/assets/img/portfolio/6.jpg" alt="..." />
-							</a>
-							<div class="portfolio-caption">
-								<div class="portfolio-caption-heading">Diesel</div>
-								<div class="portfolio-caption-subheading text-muted">Branding</div>
 							</div>
 						</div>
 					</div>
@@ -605,7 +527,7 @@
 	// import { Navbar } from "@/components/Navbar"; 
 	import i18n from '../../plugins/i18n';
 	export default {
-		name: 'HelloWorld',
+		name: 'Home',
 		props: {
 			msg: String
 		},
@@ -632,10 +554,13 @@
 			}
 		},
 		watch:{
-			
+			// products(v){
+				// console.info(v)
+			// }
 		},
 		computed: {
 			products() {
+				console.info(this.$store.getters.products)
 				return this.$store.getters.products;
 			},
 		}
