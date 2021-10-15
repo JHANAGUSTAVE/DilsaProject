@@ -22,8 +22,18 @@
 
 		},
 		data(){
+,
+		},
+        methods:{
+            login() {
+                this.$store.dispatch("Auth/signin", {
+                username: this.form.username.toLowerCase(),
+                password: this.form.password
+            });
+        }
+        // this.ContentLoader = true;
+      },
 
-		}
 	};
 </script>
 <style scoped>
