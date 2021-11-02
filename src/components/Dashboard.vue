@@ -1,11 +1,11 @@
 <template>
     <div>
         <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-        <a class="navbar-brand col-sm-3 col-md-2 mr-0 pr-2" href="#">Dilsa</a>
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0 px-3" href="#">Dilsa</a>
         <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search" />
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
-            <a class="nav-link" href="#">Login</a>
+              <a class="nav-link" v-on:click="logout()" href="#">Logout</a>
             </li>
         </ul>
         </nav>
@@ -13,72 +13,77 @@
         <div class="container-fluid">
         <div class="row">
             <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-            <div class="sidebar-sticky">
-                <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">
-                    <span data-feather="home"></span>
-                    Dashboard <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                    <span data-feather="home"></span>
-                    Utilisateurs
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                    <span data-feather="home"></span>
-                    Produits
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                    <span data-feather="home"></span>
-                    Promotions
-                    </a>
-                </li>
-                
+              <div class="sidebar-sticky">
+                  <ul class="nav flex-column">
+                  <li class="nav-item">
+                      <a class="nav-link active" href="#">
+                      <span data-feather="home"></span>
+                      Dashboard <span class="sr-only">(current)</span>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <router-link class="nav-link" to="/dashboard/users">
+                      <span data-feather="home"></span>
+                      Utilisateurs
+                      </router-link>
+                  </li>
+                  <li class="nav-item">
+                      <router-link class="nav-link" to="/dashboard/products">
+                      <span data-feather="home"></span>
+                      Produits ({{products.length}})
+                      </router-link>
+                  </li>
+                  <li class="nav-item">
+                      <router-link class="nav-link" to="/dashboard/promotions">
+                      <span data-feather="home"></span>
+                      Promotions
+                      </router-link>
+                  </li>
+                  
 
-                </ul>
+                  </ul>
 
-                <!-- <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                <span>Saved reports</span>
-                <a class="d-flex align-items-center text-muted" href="#">
-                    <span data-feather="plus-circle"></span>
-                </a>
-                </h6> -->
-                <ul class="nav flex-column mb-2">
-                <li class="nav-item">
-                    <!-- <a class="nav-link" href="#">
-                    <span data-feather="file-text"></span>
-                    Current month
-                    </a> -->
-                </li>
-                </ul>
-            </div>
+                  <!-- <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                  <span>Saved reports</span>
+                  <a class="d-flex align-items-center text-muted" href="#">
+                      <span data-feather="plus-circle"></span>
+                  </a>
+                  </h6> -->
+                  <ul class="nav flex-column mb-2">
+                  <li class="nav-item">
+                      <!-- <a class="nav-link" href="#">
+                      <span data-feather="file-text"></span>
+                      Current month
+                      </a> -->
+                  </li>
+                  </ul>
+              </div>
             </nav>
 
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <!-- <h1 class="h2">Dashboard</h1>
-                <div class="btn-toolbar mb-2 mb-md-0">
-                <div class="btn-group mr-2">
-                    <button class="btn btn-sm btn-outline-secondary">Share</button>
-                    <button class="btn btn-sm btn-outline-secondary">Export</button>
-                </div>
-                <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                    <span data-feather="calendar"></span>
-                    This week
-                </button>
-                </div> -->
-            </div>
+            <main role="main" class="col-md-9 ml-sm-auto offset-lg-2 col-lg-10 pt-3 px-4">
+              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                  <h1 class="h2">Dashboard</h1>
+                  <div class="btn-toolbar mb-2 mb-md-0">
+                  <div class="btn-group mr-2">
+                      <button class="btn btn-sm btn-outline-secondary">Share</button>
+                      <button class="btn btn-sm btn-outline-secondary">Export</button>
+                  </div>
+                  <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                      <span data-feather="calendar"></span>
+                      This week
+                  </button>
+                  </div>
+              </div>
 
-            <h2>Section title</h2>
-            <div class="table-responsive">
-            
-            </div>
+              <h2>Section title</h2>
+              <div class="table-responsive">
+                <Products v-if='pathname =="/dashboard/products"'/>
+                <Promotions v-else-if='pathname =="/dashboard/promotions"' />
+                <Users v-else-if='pathname =="/dashboard/users"' />
+                <div v-else>Dashboard</div>
+              </div>
+
+              
             </main>
         </div>
         </div>
@@ -88,11 +93,56 @@
 
 </template>
 <script>
+  import Products from './Products';
+  import Promotions from './Promotions';
+    import Users from './Users';
+
+
 	export default {
 		name: "Dashboard",
+    components:{
+      Products,
+      Promotions,
+      Users
+    },
+    data() {
+      return {
+        pathname:''
+      }
+    },
 		created(){
+      if(!this.user){
+        this.$router.push('/login');
+      }
+      this.$store.dispatch('callProducts');
 
-		}
+		},
+    methods: {
+      logout: function(){
+        this.$store.dispatch('logout');
+      },
+      getPathname: function(){
+        this.pathname = window.location.pathname;
+      }
+    },
+    watch:{
+        user(value){
+            if(!value){
+                this.$router.push('/login');
+            }
+        },
+        $route (to){
+          this.pathname = to.path;
+        }
+    },
+    computed: {
+      user(){
+        return this.$store.getters.user;
+      },
+      products(){
+        return this.$store.getters.products;
+      }
+    }
 	};
 </script>
 <style scoped>

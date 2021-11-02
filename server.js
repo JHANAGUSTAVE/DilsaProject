@@ -2,25 +2,31 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const db = require('./db')
 const cors = require("cors");
-const path = require("path");
+const jwt = require("jsonwebtoken");
+const nodemailer = require('nodemailer')
 
-const expressSession = require("express-session");
-const passport = require("passport");
-const Auth0Strategy = require("passport-auth0");
-
-
+const Pool = require('pg').Pool
+const pool = new Pool({
+  user: 'postgres',
+  host: 'localhost',
+  database: 'dilsa_db',
+  password: 'postgres',
+  port: 5432,
+});
 
 require("dotenv").config();
-const authRouter = require("./auth");
+const verifyToken = require("./auth");
 
 const app = express()
-const port = 3001
+const port = process.env.PORT || 3001
 
-const port = process.env.PORT || "8000";
+const GMAIL_USER = process.env.GMAIL_USER || 'tf@fdree.co'
+const GMAIL_PASS = process.env.GMAIL_PASS || 'aawaaw'
 
 var corsOptions = {
   origin: "http://localhost:8080"
 };
+
 
 app.use(cors(corsOptions));
 app.use(bodyParser.json())
@@ -30,81 +36,103 @@ app.use(
   })
 )
 
-
-const session = {
-  secret: process.env.SESSION_SECRET,
-  cookie: {},
-  resave: false,
-  saveUninitialized: false
-};
-
 if (app.get("env") === "production") {
   // Serve secure cookies, requires HTTPS
   session.cookie.secure = true;
 }
 
+function authenticate(req, res, next) {
+  const { email, password } = req.body;
+  const rawQuery = `SELECT * FROM users WHERE email='${email}' AND password='${password}'`;
+  const u = pool.query(rawQuery, (error, results) => {
+    if (error) {
+      res.status(500).json({ message: 'error' });
+    }
+    const user = results.rows?.[0]; // this is an Array error
+    
+    if (user) {
+        delete user.password;
 
+        // Create token
+        const token = jwt.sign(
+          { user_id: user.id, email },
+          process.env.TOKEN_KEY,
+          {
+            expiresIn: "8h",
+          }
+        );
+        // save user token
+        user.token = token;
 
-const strategy = new Auth0Strategy(
-  {
-    domain: process.env.AUTH0_DOMAIN,
-    clientID: process.env.AUTH0_CLIENT_ID,
-    clientSecret: process.env.AUTH0_CLIENT_SECRET,
-    callbackURL: process.env.AUTH0_CALLBACK_URL
-  },
-  function(accessToken, refreshToken, extraParams, profile, done) {
-    /**
-     * Access tokens are used to authorize users to an API
-     * (resource server)
-     * accessToken is the token to call the Auth0 API
-     * or a secured third-party API
-     * extraParams.id_token has the JSON Web Token
-     * profile has all the information from the user
-     */
-    return done(null, profile);
-  }
-);
+        res.json(user);
+    }else{
+      res.status(400).json({ message: 'Email or password is incorrect' })
+    }
+  }) 
+}
 
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "pug");
-app.use(express.static(path.join(__dirname, "public")));
+//app.use("/", authRouter);
 
-app.use(expressSession(session));
-passport.use(strategy);
-app.use(passport.initialize());
-app.use(passport.session());
+app.post('/login', authenticate)
 
-passport.serializeUser((user, done) => {
-  done(null, user);
-});
+app.post('/login2', (req, res) => {
+  res.json(
+    {
+      user: {
+        firstName:'Jhana',
+        lastName: "Gustave",
+        email:"example@mail.com",
+        photo:'path/to/photo.jpg',
+        token:'zxcvbnefght53hbxc006bcc12fsdgfsdsdf',
+      }
+    }
+  );
+})
 
-passport.deserializeUser((user, done) => {
-  done(null, user);
-});
+app.post('/contact', (req, res) => {
 
-app.use((req, res, next) => {
-  res.locals.isAuthenticated = req.isAuthenticated();
-  next();
-});
+  console.log(req)
+  const smtpTrans = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    auth: {
+      user: GMAIL_USER,
+      pass: GMAIL_PASS
+    }
+  })
 
-const secured = (req, res, next) => {
-  if (req.user) {
-    return next();
-  }
-  req.session.returnTo = req.originalUrl;
-  res.redirect("/login");
-};
-
-
-app.use("/", authRouter);
-
+    const mailOpts = {
+      from: 'Your sender info here', 
+      to: GMAIL_USER,
+      subject: 'New message from contact form at tylerkrys.ca',
+      text: `${req.body.name} (${req.body.email}) says: ${req.body.message}`
+    }
+  
+   
+    smtpTrans.sendMail(mailOpts, (error, response) => {
+      if (error) {
+        res.json('contact-failure')
+      }
+      else {
+        res.json('contact-success') 
+      }
+    })
+  })
 
 app.get('/', (req, res) => {
     res.json({ info: 'Node.js, Express, and Postgres API' })
 })
 
+app.get('/products', verifyToken ,db.getProducts)
 
-app.get('/products/', db.getProducts)
+app.get('/promotions', verifyToken ,db.getPromotions)
+
+app.get('/users', verifyToken ,db.getUsers)
+
+// app.post('/createUsers', verifyToken ,db.CreateUsers)
+
+app.get('/public-products', db.getProducts)
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)

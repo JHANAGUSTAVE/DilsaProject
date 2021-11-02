@@ -1,7 +1,8 @@
 import Home from '@/components/Home'
 import Dashboard from '@/components/Dashboard'
 import Login from '@/components/Login'
-
+import PageNotFound from '@/components/PageNotFound'
+import Contact from '@/components/Contact'
 export const routes = [
     {
       path: '/',
@@ -17,6 +18,30 @@ export const routes = [
       path: '/login',
       name: 'Login',
       component:  Login
+    },
+    {
+      path: '*',
+      component:  PageNotFound
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component:  Contact
+    },
+    {
+      path: '/dashboard/promotions',
+      name: 'Dashboard',
+      component:  Dashboard
+    },
+    {
+      path: '/dashboard/users',
+      name: 'Dashboard',
+      component:  Dashboard
+    },
+    {
+      path: '/dashboard/products',
+      name: 'Dashboard',
+      component:  Dashboard
     }
    
 ];

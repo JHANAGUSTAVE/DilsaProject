@@ -1,14 +1,16 @@
 <template>
     <div>
-		<form>  
+		<form v-on:submit='login'>  
 			<div class="container">   
-				<label>Username : </label>   
-				<input type="text" placeholder="Enter Username" name="username" required>  
+				<label>Email : </label>   
+				<input type="text" v-model="email"
+                    placeholder="Enter email" name="email" required>  
 				<label>Password : </label>   
-				<input type="password" placeholder="Enter Password" name="password" required>  
+				<input type="password" placeholder="Enter Password" v-model="password" 
+                    name="password" required>  
 				<button type="submit">Login</button>   
 				<!-- <input type="checkbox" checked="checked"> Remember me    -->
-				<button type="button" class="cancelbtn"> Cancel</button>   
+				<button type="submit" class="cancelbtn"> Cancel</button>   
 				Forgot <a href="#"> password? </a>   
 			</div>   
        </form>     
@@ -19,21 +21,39 @@
 	export default {
 		name: "Login",
 		created(){
-
+            if(typeof(this.user) !== 'undefined' && this.user != null){
+                this.$router.push('/dashboard');
+            }
 		},
 		data(){
-,
+            return {
+                email:"",
+                password:"",
+            }
 		},
+        watch:{
+            user(value){
+                if(typeof(value) !== 'undefined' && value != null){
+                    this.$router.push('/dashboard');
+                }
+            }
+        },
         methods:{
-            login() {
-                this.$store.dispatch("Auth/signin", {
-                username: this.form.username.toLowerCase(),
-                password: this.form.password
-            });
+            login(e) {
+                e.preventDefault();
+                this.$store.dispatch("login", {
+                    email: this.email,
+                    password: this.password
+                });
+            },
+        },
+        computed:{
+            user() {
+                //checking user from state
+                return this.$store.getters.user;
+            },
         }
         // this.ContentLoader = true;
-      },
-
 	};
 </script>
 <style scoped>
@@ -48,7 +68,7 @@ button {
         cursor: pointer;   
          }   
  form {   
-        border: 3px solid #f1f1f1;   
+        border: 3px solid #eed6d6;   
     }   
  input[type=text], input[type=password] {   
         width: 100%;   

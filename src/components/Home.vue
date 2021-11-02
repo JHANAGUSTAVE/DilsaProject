@@ -80,8 +80,7 @@
 		<section class="page-section bg-light" id="produits">
 			<div class="container">
 				<div class="text-center">
-					<h2 class="section-heading text-uppercase">Produitss</h2>
-					<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+					<h2 class="section-heading text-uppercase">Produits</h2>
 				</div>
 				<div class="row" v-if='typeof(products) !== "undefined" && products != null'>
 					<div
@@ -111,7 +110,6 @@
 			<div class="container">
 				<div class="text-center">
 					<h2 class="section-heading text-uppercase">{{$t("Abt")}}</h2>
-					<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
 				</div>
 				<ul class="timeline">
 					<li>
@@ -170,7 +168,6 @@
 			<div class="container">
 				<div class="text-center">
 					<h2 class="section-heading text-uppercase">SUPPORT AND CUSTOMER SERVICE</h2>
-					<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
 				</div>
 				<div class="row">
 					<div class="col-lg-4">
@@ -210,7 +207,7 @@
 			</div>
 		</section>
 		<!-- Clients-->
-		<div class="py-5">
+		<!-- <div class="py-5">
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-md-3 col-sm-6 my-3">
@@ -227,7 +224,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<!-- Contact-->
 		<section class="page-section" id="contact">
 			<div class="container">
@@ -288,7 +285,7 @@
 					<!-- an error submitting the form-->
 					<div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
 					<!-- Submit Button-->
-					<div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Send Message</button></div>
+					<div class="text-center"><button class="btn btn-primary btn-xl " id="submitButton" type="submit">Send Message</button></div>
 				</form>
 			</div>
 		</section>
