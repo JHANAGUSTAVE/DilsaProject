@@ -49,26 +49,18 @@
 				</div>
 				<div class="row text-center">
 					<div class="col-md-4">
-						<span class="fa-stack fa-4x">
-							<i class="fas fa-circle fa-stack-2x text-primary"></i>
-							<i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-						</span>
+						<img height="170px" width="170px" class="rounded-circle" :src="imgAS" alt="alt" />
 						<h4 class="my-3">{{$t("adn")}}</h4>
 						<p class="text-muted">{{$t("adntxt")}}</p>
 					</div>
 					<div class="col-md-4">
-						<span class="fa-stack fa-4x">
-							<i class="fas fa-circle fa-stack-2x text-primary"></i>
-							<i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-						</span>
+                        <img height="170px" width="170px" class="rounded-circle" :src="img1" alt="alt" />
+                        
 						<h4 class="my-3">{{$t("Rad")}}</h4>
 						<p class="text-muted">{{$t("Radtxt")}}</p>
 					</div>
 					<div class="col-md-4">
-						<span class="fa-stack fa-4x">
-							<i class="fas fa-circle fa-stack-2x text-primary"></i>
-							<i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-						</span>
+						<img height="170px" width="170px" class="rounded-circle" :src="imgSc" alt="alt" />
 						<h4 class="my-3">{{$t("SACS")}}</h4>
 						<p class="text-muted">{{$t("SACSTXT1")}}</p>
 					</div>
@@ -113,39 +105,39 @@
 				</div>
 				<ul class="timeline">
 					<li>
-						<div class="timeline-image"><img class="rounded-circle img-fluid" src="@/assets/img/about/1.jpg" alt="..." /></div>
+						<div class="timeline-image"><img height="170px" width="170px" class="rounded-circle" :src="imgB" alt="..." />></div>
 						<div class="timeline-panel">
 							<div class="timeline-heading">
-								<h4 class="subheading">Our Humble Beginnings</h4>
+								<h4 class="subheading">{{$t("OHB")}}</h4>
 							</div>
-							<div class="timeline-body"><p class="text-muted">DIL  is the foremost diesel laboratory in Haiti. It is specialized in testing, repairing and calibrating pumps, injectors, turbo chargers and most types of other diesel injectors (marine and generators applications). </p></div>
+							<div class="timeline-body"><p class="text-muted">{{$t("tOHB")}}</p></div>
 						</div>
 					</li>
 					<li class="timeline-inverted">
-						<div class="timeline-image"><img class="rounded-circle img-fluid" src="@/assets/img/about/2.jpg" alt="..." /></div>
+						<div class="timeline-image"><img height="170px" width="170px" class="rounded-circle" :src="imgSc" alt="..." /></div>
 						<div class="timeline-panel">
 							<div class="timeline-heading">
-								<h4 class="subheading">An Agency is Born</h4>
+								<h4 class="subheading">{{$t("AAB")}}</h4>
 							</div>
-							<div class="timeline-body"><p class="text-muted">Diesel Injection Laboratory SA ( Fomer Precision Injection Shop ) is a well established haitian diesel workshop company. The company has been operating in Haiti since 1992. </p></div>
+							<div class="timeline-body"><p class="text-muted">{{$t("tAAB")}} </p></div>
 						</div>
 					</li>
 					<li>
-						<div class="timeline-image"><img class="rounded-circle img-fluid" src="@/assets/img/about/3.jpg" alt="..." /></div>
+						<div class="timeline-image"><img height="170px" width="170px" class="rounded-circle" :src="imgTS" alt="..." /></div>
 						<div class="timeline-panel">
 							<div class="timeline-heading">
-								<h4 class="subheading">Transition to Full Service</h4>
+							<h4 class="subheading">{{$t("TFS")}}</h4>
 							</div>
-							<div class="timeline-body"><p class="text-muted">Highest standard of performance in delivering services is one of the key of success of the company. PIS keeps an open eye on the latest development of the latest technologies and equipment available worldwide in the field of diesel systems. The company is also interested in the development of clean energy such biodiesel, solar and wind energies. </p></div>
+							<div class="timeline-body"><p class="text-muted">{{$t("tTFS")}} </p></div>
 						</div>
 					</li>
 					<li class="timeline-inverted">
-						<div class="timeline-image"><img class="rounded-circle img-fluid" src="@/assets/img/about/4.jpg" alt="..." /></div>
+						<div class="timeline-image"><img height="170px" width="170px" class="rounded-circle" :src="imgPTE" alt="..." /></div>
 						<div class="timeline-panel">
 							<div class="timeline-heading">
-								<h4 class="subheading">Phase Two Expansion</h4>
+								<h4 class="subheading">{{$t("PTE")}}</h4>
 							</div>
-							<div class="timeline-body"><p class="text-muted">One of its goals is to meet the needs of its customers in the respect of the environment. The company  purchased new Hartridge equipment Sabre CRI Master and  EU INJECTOR TESTER AND ACCESSORIES and Motortool MT-5600D, .
+							<div class="timeline-body"><p class="text-muted">{{$t("tPTE")}}
 							</p></div>
 						</div>
 					</li>
@@ -523,6 +515,13 @@
 <script>
 	// import { Navbar } from "@/components/Navbar"; 
 	import i18n from '../../plugins/i18n';
+	import img1 from '@/assets/img/services/IMG-01.jpg';
+	import imgBg from '@/assets/img/services/IMG-20211101-WA0065.jpg'
+	import imgSc from '@/assets/img/services/IMG-20211101-WA0065.jpg'
+	import imgAS from '@/assets/img/services/IMG-20211101-WA0056.jpg'
+	import imgPTE from '@/assets/img/about/IMG-20211101-WA0061.jpg'
+	import imgTS from '@/assets/img/about/IMG-20211101-WA0071.jpg'
+	import imgB from '@/assets/img/about/IMG-20211101-WA0069.jpg'
 	export default {
 		name: 'Home',
 		props: {
@@ -534,8 +533,8 @@
 					{ flag: 'us', language: 'en', title: 'English' },
 					{ flag: 'es', language: 'es', title: 'Español' },
 					{ flag: 'fr', language: 'fr', title: 'Francais' },
-				]
-			}
+				],
+				img1, imgBg, imgSc,	imgAS, imgPTE, imgTS, imgB,	}
 		},
 		created() {
 			this.callProducts();
@@ -570,4 +569,5 @@
 	.dropdown ul.dropdown-menu.show li{
 		cursor: pointer;
 	}
+	
 </style>

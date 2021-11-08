@@ -83,7 +83,9 @@
                 <div v-else>Dashboard</div>
               </div>
 
-              
+              <div>
+                <button v-on:click="add()" class="btn btn-primary btn-sm">Add</button>
+              </div>
             </main>
         </div>
         </div>

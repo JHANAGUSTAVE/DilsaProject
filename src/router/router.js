@@ -3,6 +3,8 @@ import Dashboard from '@/components/Dashboard'
 import Login from '@/components/Login'
 import PageNotFound from '@/components/PageNotFound'
 import Contact from '@/components/Contact'
+import SaveProduct from '@/components/SaveProduct'
+
 export const routes = [
     {
       path: '/',
@@ -42,6 +44,11 @@ export const routes = [
       path: '/dashboard/products',
       name: 'Dashboard',
       component:  Dashboard
+    },
+    {
+      path: '/dashboard/products/add',
+      name: 'SaveProduct',
+      component:  SaveProduct
     }
    
 ];
