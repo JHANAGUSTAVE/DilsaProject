@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from .models import *
 from .forms import *
 
@@ -20,3 +21,7 @@ def contact(request):
 			return JsonResponse({'error_message':''})
 		return JsonResponse({'error_message': str(form.errors.as_text())})
 	return redirect('home')
+
+def text(request):
+	content = '943DDDB6088FBE65DA6397AE8FE3EC712876859864C423C9D0D83A6474DCC4EE\nsectigo.com'
+	return HttpResponse(content, content_type='text/plain')

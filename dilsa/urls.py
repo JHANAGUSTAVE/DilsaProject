@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', core_views.home, name='home'),
     path('contact/', core_views.contact, name='contact'),
+    path('.well-known/pki-validation/72AD529C0559589116C251B1C91E4E05.txt', core_views.text, name='contact'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
