@@ -22,7 +22,7 @@
 
 <script>
 	export default {
-		name: "Promotionss",
+		name: "Promotions",
         props: {
             promotions: Array,
         },
