@@ -1,26 +1,25 @@
-{% load static %}
+{% load static i18n %}
 <section class="page-section" id="services">
 	<div class="container">
 		<div class="text-center">
-			<h3 class="section-heading text-uppercase">SUPPORT AND CUSTOMER SERVICE</h3>
-			<h4 class="section-subheading text-muted">The company is very sensitive to the customer 
-			satisfaction. A team of two persons is dedicated five days a week to answer the customer's inquiries and complains.</h4>
+			<h3 class="section-heading text-uppercase">{% trans 'Support and customer service' %}</h3>
+			<h4 class="section-subheading text-muted">{% blocktrans %}The company is very sensitive to the customer satisfaction.{% endblocktrans %}</h4>
 		</div>
 		<div class="row text-center">
 			<div class="col-md-4">
 				<img height="170px" width="170px" class="rounded-circle" src="{% static 'img/services/IMG-20211101-WA0056.jpg' %}" alt="alt" />
-				<h4 class="my-3">Engine</h4>
-				<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+				<h4 class="my-3">{% trans 'Acquisition and need' %}</h4>
+				<p class="text-muted">{% blocktrans %}The company  purchased new Hartridge equipment Sabre CRI Master and  EU INJECTOR TESTER AND ACCESSORIES and Motortool MT-5600D.{% endblocktrans %}</p>
 			</div>
 			<div class="col-md-4">
 				<img height="170px" width="170px" class="rounded-circle" src="{% static 'img/services/IMG-01.jpg' %}" alt="alt" />
-				<h4 class="my-3">Engine</h4>
-				<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+				<h4 class="my-3">Research and development</h4>
+				<p class="text-muted">{% blocktrans %}Highest standard of performance in delivering services is one of the key of success of the company. PIS keeps an open eye on the latest development of the latest technologies and equipment available worldwide in the field of diesel systems.{% endblocktrans %}</p>
 			</div>
 			<div class="col-md-4">
 				<img height="170px" width="170px" class="rounded-circle" src="{% static 'img/services/IMG-20211101-WA0065.jpg' %}" alt="alt" />
-				<h4 class="my-3">Engine</h4>
-				<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+				<h4 class="my-3">{% trans 'Acquisition and need' %}</h4>
+				<p class="text-muted">{% blocktrans %}A team of two persons is dedicated five days a week to answer the customer's inquiries and complains. The company is also interested in the development of clean energy such biodiesel, solar and wind energies.{% endblocktrans %}</p>
 			</div>
 		</div>
 	</div>

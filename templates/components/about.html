@@ -1,60 +1,50 @@
-{% load static %}
+{% load static i18n %}
 <section class="page-section" id="about">
 	<div class="container">
 		<div class="text-center">
-			<h2 class="section-heading text-uppercase">About US</h2>
-			<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+			<h2 class="section-heading text-uppercase">{% trans 'About' %}</h2>
 		</div>
 		<ul class="timeline">
 			<li>
 				<div class="timeline-image"><img height="100%" class="rounded-circle img-fluid" src="{% static 'img/about/IMG-20211101-WA0069.jpg' %}" alt="..." /></div>
 				<div class="timeline-panel">
 					<div class="timeline-heading">
-						<h4>1992-2021</h4>
-						<h4 class="subheading">Our Humble Beginnings</h4>
+						<h4 class="subheading">{% trans 'Our Humble Beginnings' %}</h4>
 					</div>
-					<div class="timeline-body"><p class="text-muted">DIL  is the foremost diesel laboratory in Haiti. It is specialized in testing, repairing and calibrating pumps, injectors, turbo chargers and most types of other diesel injectors (marine and generators applications). </p></div>
+					<div class="timeline-body"><p class="text-muted">{% trans 'DIL is the foremost diesel laboratory in Haiti. It is specialized in testing, repairing and calibrating pumps, injectors, turbo chargers and most types of other diesel injectors (marine and generators applications).' %}</p></div>
 				</div>
 			</li>
 			<li class="timeline-inverted">
 				<div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'img/services/IMG-20211101-WA0065.jpg' %}" alt="..." /></div>
 				<div class="timeline-panel">
 					<div class="timeline-heading">
-						<h4>March 2011</h4>
-						<h4 class="subheading">An Agency is Born</h4>
+						<h4 class="subheading">{% trans 'An Agency is Born' %}</h4>
 					</div>
-					<div class="timeline-body"><p class="text-muted">Diesel Injection Laboratory SA ( Fomer Precision Injection Shop ) is a well established haitian diesel workshop company. The company has been operating in Haiti since 1992. </p></div>
+					<div class="timeline-body"><p class="text-muted">{% blocktrans %}Diesel Injection Laboratory SA ( Fomer Precision Injection Shop ) is a well established haitian diesel workshop company. The company has been operating in Haiti since 1992.{% endblocktrans %}</p></div>
 				</div>
 			</li>
 			<li>
 				<div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'img/about/IMG-20211101-WA0071.jpg' %}" alt="..." /></div>
 				<div class="timeline-panel">
 					<div class="timeline-heading">
-						<h4>December 2015</h4>
-						<h4 class="subheading">Transition to Full Service</h4>
+						<h4 class="subheading">{% trans 'Transition to Full Service' %}</h4>
 					</div>
-					<div class="timeline-body"><p class="text-muted">Highest standard of performance in delivering services is one of the key of success of the company. PIS keeps an open eye on the latest development of the latest technologies and equipment available worldwide in the field of diesel systems. The company is also interested in the development of clean energy such biodiesel, solar and wind energies. </p></div>
+					<div class="timeline-body"><p class="text-muted">{% blocktrans %}Highest standard of performance in delivering services is one of the key of success of the company. PIS keeps an open eye on the latest development of the latest technologies and equipment available worldwide in the field of diesel systems. The company is also interested in the development of clean energy such biodiesel, solar and wind energies.{% endblocktrans %}</p></div>
 				</div>
 			</li>
 			<li class="timeline-inverted">
 				<div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'img/about/IMG-20211101-WA0061.jpg' %}" alt="..." /></div>
 				<div class="timeline-panel">
 					<div class="timeline-heading">
-						<h4>July 2020</h4>
-						<h4 class="subheading">Phase Two Expansion</h4>
+						<h4 class="subheading">{% trans 'Phase Two Expansion' %}</h4>
 					</div>
-					<div class="timeline-body"><p class="text-muted">One of its goals is to meet the needs of its customers in the respect of the environment. The company  purchased new Hartridge equipment Sabre CRI Master and  EU INJECTOR TESTER AND ACCESSORIES and Motortool MT-5600D, .
-					</p></div>
+					<div class="timeline-body"><p class="text-muted">{% blocktrans %}One of its goals is to meet the needs of its customers in the respect of the environment. The company  purchased new Hartridge equipment Sabre CRI Master and EU INJECTOR TESTER AND ACCESSORIES and Motortool MT-5600D.{% endblocktrans %}</p></div>
 				</div>
 			</li>
 			<li class="timeline-inverted">
 				<div class="timeline-image">
 					<h4>
-						Be Part
-						<br />
-						Of Our
-						<br />
-						Story!
+						{% blocktrans %}Be Part<br/>Of Our<br />Story!{% endblocktrans %}
 					</h4>
 				</div>
 			</li>

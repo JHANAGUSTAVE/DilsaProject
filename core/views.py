@@ -6,20 +6,25 @@ from .forms import *
 def home(request):
 	form = ContactForm()
 	all_products = Product.objects.all()
-	context = {'all_products':all_products, 'form':form}
+	promotion_list = Promotion.objects.filter(active=True, photo__isnull=False).order_by('position')
+	context = {'all_products':all_products, 'form':form, 'promotion_list':promotion_list}
 	return render(request, 'home.html', context)
 
 def contact(request):
 	form = ContactForm(request.POST or None)
 	if request.method == 'POST':
 		if form.is_valid():
-			form.save()
+			contact = form.save()
 
-			# send email to admin
-			# send_email([])
+			from django.core.mail import send_mail
 
-			return JsonResponse({'error_message':''})
-		return JsonResponse({'error_message': str(form.errors.as_text())})
+			send_mail(
+				'Message from %s' % contact.name,
+				contact.message,
+				'groupcode9@gmail.com',
+				['rynnika@gmail.com', 'jhana.gustave@gmail.com'],
+				fail_silently=True,
+			)
 	return redirect('home')
 
 def text(request):

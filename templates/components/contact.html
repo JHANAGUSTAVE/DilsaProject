@@ -1,9 +1,9 @@
-{% load static %}
+{% load static i18n %}
 <section class="page-section" id="contact" style='background-image: url({% static "img/map-image.png" %});'>
 	<div class="container">
 		<div class="text-center">
-			<h2 class="section-heading text-uppercase">Contact Us</h2>
-			<h3 class="section-subheading text-muted">DIL is located at 29, chareron street, Port-au-Prince, Haiti in  a two stages built facility of 600 m2. At this time, the company operates also at 29 Lafleur Ducheine street  for the administration and storage and the modern workshop in a hall of 200 m2.</h3>
+			<h2 class="section-heading text-uppercase">{% trans 'Contact Us' %}</h2>
+			<h3 class="section-subheading text-muted">{% blocktrans %}DIL is located at 29, chareron street, Port-au-Prince, Haiti in  a two stages built facility of 600 m2. At this time, the company operates also at 29 Lafleur Ducheine street  for the administration and storage and the modern workshop in a hall of 200 m2.{% endblocktrans %}</h3>
 		</div>
 		<!-- * * * * * * * * * * * * * * *-->
 		<!-- * * SB Forms Contact Form * *-->
@@ -59,7 +59,7 @@
 			<!-- an error submitting the form-->
 			<div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
 			<!-- Submit Button-->
-			<div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">Send Message</button></div>
+			<div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">{% trans 'Send Message' %}</button></div>
 		</form>
 	</div>
 </section>

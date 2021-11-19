@@ -32,7 +32,7 @@ class Promotion(models.Model):
 	date_created = models.DateTimeField(auto_now_add=True)
 	date_modified = models.DateTimeField(auto_now=True)
 	name = models.CharField(max_length=200)
-	description = models.TextField(max_length=400)
+	description = models.TextField(max_length=400, blank=True, null=True)
 	photo = models.ImageField(upload_to='promotions/photos/', blank=True, null=True)
 	active = models.BooleanField(default=False)
 	position = models.IntegerField(default=-1)

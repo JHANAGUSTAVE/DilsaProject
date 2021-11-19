@@ -10,8 +10,13 @@ class ContactAdmin(admin.ModelAdmin):
 	list_display = ('date_created', 'name', 'email', 'phone')
 	search_fields =  ('name','email', 'phone')
 
+
+class PromotionAdmin(admin.ModelAdmin):
+	list_display = ('date_created', 'name', 'active')
+	search_fields =  ('name','description',)
+
 admin.site.register(Product, ProductAdmin)
-admin.site.register(Promotion)
+admin.site.register(Promotion, PromotionAdmin)
 admin.site.register(Category)
 admin.site.register(Contact, ContactAdmin)
 
