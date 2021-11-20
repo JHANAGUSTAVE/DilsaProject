@@ -9,7 +9,8 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+from django.utils.translation import ugettext_lazy as _
+from django.conf import global_settings,locale
 from pathlib import Path
 from decouple import config,Csv
 import os
@@ -56,6 +57,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -130,7 +132,18 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'fr-FR'
+LANGUAGES = (
+    ('en', _('English')),
+    ('fr', _('French')),
+)
+
+LANGUAGE_CODE = 'en'
+
+LANGUAGE_COOKIE_NAME = '_lg'
+
+LOCALE_PATHS = (
+    BASE_DIR / 'locale',
+)
 
 TIME_ZONE = 'Etc/GMT+4'
 

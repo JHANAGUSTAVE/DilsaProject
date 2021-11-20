@@ -1,0 +1,240 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-20 11:55-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: core/forms.py:14
+msgid "Your Name *"
+msgstr "Votre nom *"
+
+#: core/forms.py:15
+msgid "Your Email *"
+msgstr "Votre e-mail *"
+
+#: core/forms.py:16
+msgid "Your Phone *"
+msgstr "Von téléphone *"
+
+#: core/forms.py:17
+msgid "Your Message *"
+msgstr "Votre Message *"
+
+#: dilsa/settings.py:136
+msgid "English"
+msgstr "Anglais"
+
+#: dilsa/settings.py:137
+msgid "French"
+msgstr "Français"
+
+#: templates/base.html:25
+msgid "Menu"
+msgstr "Menu"
+
+#: templates/base.html:30
+msgid "Services"
+msgstr "Services"
+
+#: templates/base.html:31 templates/components/products.html:5
+msgid "Products"
+msgstr "Produits"
+
+#: templates/base.html:32 templates/components/about.html:5
+msgid "About"
+msgstr "À propos"
+
+#: templates/base.html:33
+msgid "Team"
+msgstr "Équipe"
+
+#: templates/base.html:34
+msgid "Contact"
+msgstr "Contact"
+
+#: templates/base.html:59
+msgid "Welcome To Diesel Injection Laboratory S.A!"
+msgstr "Bienvenue à Diesel Injection Laboratory S.A!"
+
+#: templates/base.html:60
+msgid "It's Nice To Meet You"
+msgstr "Ravi de vous rencontrer"
+
+#: templates/base.html:62
+msgid "Tell Me More"
+msgstr "Dites m'en plus"
+
+#: templates/components/about.html:12
+msgid "Our Humble Beginnings"
+msgstr "Nos humbles débuts"
+
+#: templates/components/about.html:14
+msgid ""
+"DIL is the foremost diesel laboratory in Haiti. It is specialized in "
+"testing, repairing and calibrating pumps, injectors, turbo chargers and most "
+"types of other diesel injectors (marine and generators applications)."
+msgstr ""
+
+#: templates/components/about.html:21
+msgid "An Agency is Born"
+msgstr "Une agence est née"
+
+#: templates/components/about.html:23
+msgid ""
+"Diesel Injection Laboratory SA ( Fomer Precision Injection Shop ) is a well "
+"established haitian diesel workshop company. The company has been operating "
+"in Haiti since 1992."
+msgstr ""
+
+#: templates/components/about.html:30
+msgid "Transition to Full Service"
+msgstr "Transition vers le service complet"
+
+#: templates/components/about.html:32
+msgid ""
+"Highest standard of performance in delivering services is one of the key of "
+"success of the company. PIS keeps an open eye on the latest development of "
+"the latest technologies and equipment available worldwide in the field of "
+"diesel systems. The company is also interested in the development of clean "
+"energy such biodiesel, solar and wind energies."
+msgstr ""
+"DIL est le premier laboratoire diesel en Haïti. Elle est spécialisée dans "
+"les tests, la réparation et l'étalonnage de pompes, d'injecteurs, de "
+"turbocompresseurs et de la plupart des autres types d'injecteurs diesel "
+"(applications marines et groupes électrogènes)."
+
+#: templates/components/about.html:39
+msgid "Phase Two Expansion"
+msgstr "Extension de la phase 2"
+
+#: templates/components/about.html:41
+msgid ""
+"One of its goals is to meet the needs of its customers in the respect of the "
+"environment. The company  purchased new Hartridge equipment Sabre CRI Master "
+"and EU INJECTOR TESTER AND ACCESSORIES and Motortool MT-5600D."
+msgstr ""
+"L'un de ses objectifs est de répondre aux besoins de ses clients dans le "
+"respect de l'environnement. La société a acheté de nouveaux équipements "
+"Hartridge Sabre CRI Master et EU INJECTOR TESTER AND ACCESSORIES et "
+"Motortool MT-5600D."
+
+#: templates/components/about.html:47
+msgid "Be Part<br/>Of Our<br />Story!"
+msgstr "Faites Partie<br/>De Notre<br />Histoire"
+
+#: templates/components/contact.html:5
+msgid "Contact Us"
+msgstr "Contactez-Nous"
+
+#: templates/components/contact.html:6
+msgid ""
+"DIL is located at 29, chareron street, Port-au-Prince, Haiti in  a two "
+"stages built facility of 600 m2. At this time, the company operates also at "
+"29 Lafleur Ducheine street  for the administration and storage and the "
+"modern workshop in a hall of 200 m2."
+msgstr ""
+"DIL est située au 29, rue chareron, Port-au-Prince, Haïti dans une "
+"installation construite en deux étapes de 600 m2. À ce moment, l'entreprise "
+"opère également au 29 rue Lafleur Ducheine pour l'administration et "
+"l'entreposage et l'atelier moderne à une salle de 200 m2."
+
+#: templates/components/contact.html:62
+msgid "Send Message"
+msgstr "Envoyer le message"
+
+#: templates/components/footer.html:5
+msgid "Copyright"
+msgstr "Tous les droits sont réservés"
+
+#: templates/components/footer.html:12
+msgid "Privacy Policy"
+msgstr "Politique de confidentialité"
+
+#: templates/components/footer.html:13
+msgid "Terms of Use"
+msgstr "Conditions d'utilisation"
+
+#: templates/components/footer.html:14
+msgid "Back-office"
+msgstr "Back-office"
+
+#: templates/components/products.html:46
+msgid "Close"
+msgstr "Fermer"
+
+#: templates/components/services.html:5
+msgid "Support and customer service"
+msgstr "Assistance et service client"
+
+#: templates/components/services.html:6
+msgid "The company is very sensitive to the customer satisfaction."
+msgstr "L'entreprise est très sensible à la satisfaction du client."
+
+#: templates/components/services.html:11 templates/components/services.html:21
+msgid "Acquisition and need"
+msgstr "Acquisition et besoin"
+
+#: templates/components/services.html:12
+msgid ""
+"The company  purchased new Hartridge equipment Sabre CRI Master and  EU "
+"INJECTOR TESTER AND ACCESSORIES and Motortool MT-5600D."
+msgstr ""
+"La société a acheté un nouvel équipement Hartridge Sabre CRI Master et EU "
+"INJECTOR TESTER AND ACCESSORIES et Motortool MT-5600D."
+
+#: templates/components/services.html:17
+msgid ""
+"Highest standard of performance in delivering services is one of the key of "
+"success of the company. PIS keeps an open eye on the latest development of "
+"the latest technologies and equipment available worldwide in the field of "
+"diesel systems."
+msgstr ""
+"Le plus haut niveau de performance dans la prestation de services est l'une "
+"des clés du succès de l'entreprise. PIS garde un œil ouvert sur les derniers "
+"développements des dernières technologies et équipements disponibles dans le "
+"monde entier dans le domaine des systèmes diesel."
+
+#: templates/components/services.html:22
+msgid ""
+"A team of two persons is dedicated five days a week to answer the customer's "
+"inquiries and complains. The company is also interested in the development "
+"of clean energy such biodiesel, solar and wind energies."
+msgstr ""
+"Une équipe de deux personnes est dédiée cinq jours par semaine pour répondre "
+"aux demandes et réclamations des clients. L'entreprise s'intéresse également "
+"au développement d'énergies propres telles que le biodiesel, les énergies "
+"solaire et éolienne."
+
+#: templates/components/team.html:40
+msgid ""
+"Since its creation the company has been working in collaboration with a wide "
+"range of partners. It has more ten distributors across the company. For over "
+"20 years, it has developped relationship with Redat SpA, Diesel Components, "
+"Central Turbos, Southeast Power Systems and is the representative Robert "
+"Bosch, Zexel, Stanadyne  in Haiti. Furthermore, the company is an active "
+"member of the worldwide diesel specialist association (ADS)."
+msgstr ""
+"Depuis sa création, l'entreprise travaille en collaboration avec un large "
+"éventail de partenaires. Il a plus de dix distributeurs à travers "
+"l'entreprise. Depuis plus de 20 ans, elle a développé des relations avec "
+"Redat SpA, Diesel Components, Central Turbos, Southeast Power Systems et est "
+"le représentant Robert Bosch, Zexel, Stanadyne en Haïti. De plus, "
+"l'entreprise est un membre actif de l'association mondiale des spécialistes "
+"du diesel (ADS)."
+
+#~ msgid "Produits"
+#~ msgstr "Produits"

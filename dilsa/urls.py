@@ -24,6 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', core_views.home, name='home'),
     path('contact/', core_views.contact, name='contact'),
+    # path('i18n/', include('django.conf.urls.i18n')),
+    path('i18n/setlang/',core_views.set_language, name='set_language'),
     path('.well-known/pki-validation/72AD529C0559589116C251B1C91E4E05.txt', core_views.text),
 ]
 if settings.DEBUG:

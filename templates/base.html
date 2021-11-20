@@ -28,16 +28,27 @@
 				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
 						<li class="nav-item"><a class="nav-link" href="#services">{% trans 'Services' %}</a></li>
-						<li class="nav-item"><a class="nav-link" href="#produits">{% trans 'Produits' %}</a></li>
+						<li class="nav-item"><a class="nav-link" href="#produits">{% trans 'Products' %}</a></li>
 						<li class="nav-item"><a class="nav-link" href="#about">{% trans 'About' %}</a></li>
 						<li class="nav-item"><a class="nav-link" href="#team">{% trans 'Team' %}</a></li>
 						<li class="nav-item"><a class="nav-link" href="#contact">{% trans 'Contact' %}</a></li>
 					</ul>
 
-					<select class="ml-5" style="background-color: transparent;border:solid 1px #ffc800; color: #ffc800;">
-						<option value="FR">FR</option>
-						<option selected value="EN">EN</option>
-					</select>
+
+					<form action="{% url 'set_language' %}" method="post" class="ml-5">-{{LANGUAGE_CODE}}-
+						<input name="next" type="hidden" value="{{ request.path }}">
+						{% csrf_token %}
+						<select name="language"style=" background-color: transparent;border:solid 1px #ffc800; color: #ffc800;">
+						{% get_current_language as LANGUAGE_CODE %}
+						{% get_available_languages as LANGUAGES %}
+						{% get_language_info_list for LANGUAGES as languages %}
+						{% for language in languages %}
+						<option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+							{{ language.name_local|title }} ({{ language.code|upper }})
+						</option>
+						{% endfor %}
+						</select>
+					</form>
 				</div>
 			</div>
 		</nav>
@@ -63,7 +74,7 @@
 		<!-- produits Grid-->
 		{% include 'components/products.html' %}
 		{% endif %}
-		
+
 		<!-- About-->
 		{% include 'components/about.html' %}
 
@@ -81,7 +92,30 @@
 
 		<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+				
+			$("select[name=language]").change(function(){
+			    var form = $(this).closest("form");
+			    let url = $(form).attr('action');
 
+			    const urlSearchParams = new URLSearchParams(window.location.search);
+			    const params = Object.fromEntries(urlSearchParams.entries());
+			    queries = '';
+			    for(i=0;i<Object.keys(params).length;i++){
+			        key = Object.keys(params)[i]
+			        queries += (key + "=" + params[key]);
+			        if(i + 1 < Object.keys(params).length)
+			            queries += '&';
+			    }
+			    if (queries != '')
+			        url += ("?" + queries)
+
+			    $(form).attr('action', url + window.location.hash);
+			    $(form).submit();
+			});
+
+
+		</script>
 	</main>
 </body>
 </html>
