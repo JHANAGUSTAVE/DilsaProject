@@ -59,9 +59,11 @@
 		{% include 'components/promotions.html' %}
 		{% endif %}
 
+		{% if all_products %}
 		<!-- produits Grid-->
 		{% include 'components/products.html' %}
-
+		{% endif %}
+		
 		<!-- About-->
 		{% include 'components/about.html' %}
 
