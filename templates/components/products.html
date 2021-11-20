@@ -22,7 +22,7 @@
 				<div class="modal fade" id="productModal{{product.id}}" tabindex="-1" role="dialog" aria-hidden="true">
 					<div class="modal-dialog">
 						<div class="modal-content">
-							<div class="close-modal" data-dismiss="modal"><img height="15" src="{% static '/img/close-icon.svg' %}" alt="Close modal" /></div>
+							<div class="close-modal" data-dismiss="modal"><img height="15" src="{% static '/img/close-icon.svg' %}" alt="{% trans 'Close modal' %}" /></div>
 							<div class="container">
 								<div class="row justify-content-center">
 									<div class="col-lg-8">
@@ -36,7 +36,7 @@
 											{% if product.categories.all %}
 											<ul class="list-inline">
 												<li>
-													<strong>Categories:</strong>
+													<strong>{% trans 'Categories' %}:</strong>
 													{% for cat in product.categories.all %}{{cat.name}}{% if not forloop.last %}, {% endif %}{% endfor %}
 												</li>
 											</ul>
