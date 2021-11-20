@@ -144,6 +144,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
 
 
+if not DEBUG:
+    MEDIA_ROOT = '/var/www/dilsa/media'
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
@@ -151,6 +154,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS =  [
     BASE_DIR / 'static',
 ]
+
+if not DEBUG:
+    STATIC_ROOT = '/var/www/dilsa/static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
