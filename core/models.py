@@ -13,7 +13,8 @@ class Product(models.Model):
 	description = models.TextField(max_length=400)
 	photo = models.ImageField(upload_to='products/photos/', blank=True, null=True)
 	position = models.IntegerField(default=-1)
-	active = models.BooleanField(default=False)
+	active = models.BooleanField(default=False, 
+				help_text = "Pour afficher ou non, le produit sur la page d'accueil"))
 	categories = models.ManyToManyField("Category", blank=True)
 
 	def __str__(self):
@@ -26,7 +27,7 @@ class Category(models.Model):
 
 	name = models.CharField(max_length=100)
 
-	def str(self):
+	def __str__(self):
 		return self.name
 
 class Promotion(models.Model):
@@ -38,7 +39,7 @@ class Promotion(models.Model):
 	description = models.TextField(max_length=400, blank=True, null=True)
 	photo = models.ImageField(upload_to='promotions/photos/', blank=True, null=True)
 	active = models.BooleanField(default=False,
-					help_text = "Pour afficher ou non, le produit sur la page d'accueil")
+					help_text = "Pour afficher ou non, la Promotion sur la page d'accueil")
 	position = models.IntegerField(default=-1)
 
 	def __str__(self):
