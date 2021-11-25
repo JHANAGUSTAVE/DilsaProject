@@ -26,6 +26,9 @@ class Category(models.Model):
 
 	name = models.CharField(max_length=100)
 
+	def str(self):
+		return self.name
+
 class Promotion(models.Model):
 	class Meta:
 		db_table = 'promotions'
@@ -34,7 +37,8 @@ class Promotion(models.Model):
 	name = models.CharField(max_length=200)
 	description = models.TextField(max_length=400, blank=True, null=True)
 	photo = models.ImageField(upload_to='promotions/photos/', blank=True, null=True)
-	active = models.BooleanField(default=False)
+	active = models.BooleanField(default=False,
+					help_text = "Pour afficher ou non, le produit sur la page d'accueil")
 	position = models.IntegerField(default=-1)
 
 	def __str__(self):
