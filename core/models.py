@@ -14,7 +14,7 @@ class Product(models.Model):
 	photo = models.ImageField(upload_to='products/photos/', blank=True, null=True)
 	position = models.IntegerField(default=-1)
 	active = models.BooleanField(default=False, 
-				help_text = "Pour afficher ou non, le produit sur la page d'accueil"))
+				help_text = "Pour afficher ou non, le produit sur la page d'accueil")
 	categories = models.ManyToManyField("Category", blank=True)
 
 	def __str__(self):
