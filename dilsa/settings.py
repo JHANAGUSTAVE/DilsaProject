@@ -135,7 +135,18 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGES = (
     ('en', _('English')),
     ('fr', _('French')),
+    ('ht', _('Haitian Creole')),
 )
+
+EXTRA_LANG_INFO = {
+    'ht': {
+        'bidi': False, # right-to-left
+        'code': 'ht',
+        'name': 'Creole',
+        'name_local': u'Kreyòl Ayisyen', #unicode codepoints here
+    },
+}
+locale.LANG_INFO = dict(locale.LANG_INFO,**EXTRA_LANG_INFO)
 
 LANGUAGE_CODE = 'en'
 
