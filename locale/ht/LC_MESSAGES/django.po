@@ -19,71 +19,71 @@ msgstr ""
 
 #: core/forms.py:14
 msgid "Your Name *"
-msgstr ""
+msgstr "Non w *"
 
 #: core/forms.py:15
 msgid "Your Email *"
-msgstr ""
+msgstr "Imel ou *"
 
 #: core/forms.py:16
 msgid "Your Phone *"
-msgstr ""
+msgstr "Telefòn ou *"
 
 #: core/forms.py:17
 msgid "Your Message *"
-msgstr ""
+msgstr "Mesaj ou a *"
 
 #: dilsa/settings.py:136
 msgid "English"
-msgstr ""
+msgstr "Anglè"
 
 #: dilsa/settings.py:137
 msgid "French"
-msgstr ""
+msgstr "Fransè"
 
 #: dilsa/settings.py:138
 msgid "Haitian Creole"
-msgstr ""
+msgstr "Kreyòl Ayisyen"
 
 #: templates/base.html:25
 msgid "Menu"
-msgstr ""
+msgstr "Meni"
 
 #: templates/base.html:30
 msgid "Services"
-msgstr ""
+msgstr "Sèvis"
 
 #: templates/base.html:31 templates/components/products.html:5
 msgid "Products"
-msgstr ""
+msgstr "Pwodwi"
 
 #: templates/base.html:32 templates/components/about.html:5
 msgid "About"
-msgstr ""
+msgstr "Apwopo"
 
 #: templates/base.html:33 templates/components/team.html:5
 msgid "Team"
-msgstr ""
+msgstr "Ekip"
 
 #: templates/base.html:34
 msgid "Contact"
-msgstr ""
+msgstr "Kontak"
 
 #: templates/base.html:61
 msgid "Welcome To Diesel Injection Laboratory S.A!"
-msgstr ""
+msgstr "Byenvini nan Diesel Injection Laboratory S.A!"
 
 #: templates/base.html:62
 msgid "It's Nice To Meet You"
-msgstr ""
+msgstr "Se yon plezi pou nou rankontre w"
 
 #: templates/base.html:64
 msgid "Tell Me More"
-msgstr ""
+msgstr "Konnen plis"
 
 #: templates/components/about.html:12
 msgid "Our Humble Beginnings"
-msgstr ""
+msgstr "Fason klasik nou te kòmanse"
 
 #: templates/components/about.html:14
 msgid ""
@@ -91,10 +91,13 @@ msgid ""
 "testing, repairing and calibrating pumps, injectors, turbo chargers and most "
 "types of other diesel injectors (marine and generators applications)."
 msgstr ""
+"DIL se premye laboratwa dizèl Ayiti. Li spesyalize nan tès, reparasyon ak "
+"etalonaj ponp, enjektè, tibokonpresè ak majorite lòt tip enjektè dizèl yo "
+"(aplikasyon marin et jeneratè)."
 
 #: templates/components/about.html:21
 msgid "An Agency is Born"
-msgstr ""
+msgstr "Yon ajans kreye"
 
 #: templates/components/about.html:23
 msgid ""
@@ -102,10 +105,13 @@ msgid ""
 "established haitian diesel workshop company. The company has been operating "
 "in Haiti since 1992."
 msgstr ""
+"Diesel Injection Laboratory SA (Fomer Precision Injection Shop) se yon antrepriz "
+"ayisyen ki nan atelye dizèl. Antrepriz la ap fonksyone Ayiti depi 1992.\""
+
 
 #: templates/components/about.html:30
 msgid "Transition to Full Service"
-msgstr ""
+msgstr "Tranzisyon nan tout sèvis yo"
 
 #: templates/components/about.html:32
 msgid ""
@@ -115,10 +121,14 @@ msgid ""
 "diesel systems. The company is also interested in the development of clean "
 "energy such biodiesel, solar and wind energies."
 msgstr ""
+"Pi wo nivo pèfòmans nan prestasyon sèvis, se youn nan kle siksè antrepriz la. "
+"PIS toujou veye devlòpman dènye teknoloji ak ekipman ki disponib nan tout monn lan"
+" nan koze sistèm dizèl. Antrepriz la enterese tou nan devlòpman enèji pwòp tankou "
+"byodizèl, enèji solèy la ak van."
 
 #: templates/components/about.html:39
 msgid "Phase Two Expansion"
-msgstr ""
+msgstr "Ekspansyon Faz 2"
 
 #: templates/components/about.html:41
 msgid ""
@@ -126,14 +136,17 @@ msgid ""
 "environment. The company  purchased new Hartridge equipment Sabre CRI Master "
 "and EU INJECTOR TESTER AND ACCESSORIES and Motortool MT-5600D."
 msgstr ""
+"Youn nan objektif antrepriz la se reponn ak bezwen kliyan yo nan tout respè pou "
+"anviwònman an. Antrepriz la te achte nouvo ekipman Hartridge Sabre CRI Master, "
+"EU INJECTOR TESTER AND ACCESSORIES ak Motortool MT-5600D."
 
 #: templates/components/about.html:47
 msgid "Be Part<br/>Of Our<br />Story!"
-msgstr ""
+msgstr "Fè pati <br/>Istwa nou!"
 
 #: templates/components/contact.html:5
 msgid "Contact Us"
-msgstr ""
+msgstr "Kontakte nou"
 
 #: templates/components/contact.html:6
 msgid ""
@@ -142,68 +155,74 @@ msgid ""
 "29 Lafleur Ducheine street  for the administration and storage and the "
 "modern workshop in a hall of 200 m2."
 msgstr ""
+"DIL santralize nan #29, ri chareron, Pòtoprens, Ayiti nan yon batiman ki gen "
+"2 etaj 600 m2. Nan moman sa la, antrepriz la opere tou nan #29 ri Lafleur "
+"Ducheine pou administrasyon an, antrepozay ak atelye modèn nan yon sal ki mezire "
+"200 m2."
 
 #: templates/components/contact.html:62
 msgid "Send Message"
-msgstr ""
+msgstr "Voye mesaj la"
 
 #: templates/components/footer.html:5
 msgid "Copyright"
-msgstr ""
+msgstr "Tout dwa rezève"
 
 #: templates/components/footer.html:12
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Politik konfidansyalite"
 
 #: templates/components/footer.html:13
 msgid "Terms of Use"
-msgstr ""
+msgstr "Kondisyon itilizasyon"
 
 #: templates/components/footer.html:14
 msgid "Back-office"
-msgstr ""
+msgstr "Adminstrasyon"
 
 #: templates/components/products.html:25
 msgid "Close modal"
-msgstr ""
+msgstr "Fèmen fenèt"
 
 #: templates/components/products.html:39
 msgid "Categories"
-msgstr ""
+msgstr "Kategori yo"
 
 #: templates/components/products.html:46
 msgid "Close"
-msgstr ""
+msgstr "Fèmen"
 
 #: templates/components/promotions.html:23
 msgid "Previous"
-msgstr ""
+msgstr "Avan"
 
 #: templates/components/promotions.html:27
 msgid "Next"
-msgstr ""
+msgstr "Aprè"
 
 #: templates/components/services.html:5
 msgid "Support and customer service"
-msgstr ""
+msgstr "Sipò ak sèvis kliyantèl"
 
 #: templates/components/services.html:6
 msgid "The company is very sensitive to the customer satisfaction."
-msgstr ""
+msgstr "Konpayi a sansib anpil pou satisfaksyon kliyantèl li a"
 
 #: templates/components/services.html:11 templates/components/services.html:21
 msgid "Acquisition and need"
-msgstr ""
+msgstr "Akizisyon ak bezwen"
 
 #: templates/components/services.html:12
 msgid ""
 "The company  purchased new Hartridge equipment Sabre CRI Master and  EU "
 "INJECTOR TESTER AND ACCESSORIES and Motortool MT-5600D."
 msgstr ""
+"Konpayi a te achte yon nouvo ekipman Hartridge Sabre CRI Master ak EU "
+"INJECTOR TESTER AND ACCESSORIES epi yon Motortool MT-5600D."
 
 #: templates/components/services.html:16
 msgid "Research and development"
-msgstr ""
+msgstr "Rechèch ak devlòpman"
 
 #: templates/components/services.html:17
 msgid ""
@@ -212,6 +231,9 @@ msgid ""
 "the latest technologies and equipment available worldwide in the field of "
 "diesel systems."
 msgstr ""
+"Pi wo nivo pèfòmans nan prestasyon sèvis, se youn nan kle siksè antrepriz la. "
+"PIS toujou veye devlòpman dènye teknoloji ak ekipman ki disponib nan tout monn lan"
+" nan koze sistèm dizèl"
 
 #: templates/components/services.html:22
 msgid ""
@@ -219,6 +241,9 @@ msgid ""
 "inquiries and complains. The company is also interested in the development "
 "of clean energy such biodiesel, solar and wind energies."
 msgstr ""
+"Yon ekip ki gen 2 moun ki dedye senk jou chak semèn pou reponn demann ak "
+"reklamasyon kliyan to. Antrepriz la enterese tou nan devlòpman enèji pwòp tankou "
+"byodizèl, enèji solèy la ak van."
 
 #: templates/components/team.html:40
 msgid ""
@@ -229,3 +254,8 @@ msgid ""
 "Bosch, Zexel, Stanadyne  in Haiti. Furthermore, the company is an active "
 "member of the worldwide diesel specialist association (ADS)."
 msgstr ""
+"Depi lè li kreye, antrepriz la ap travay nan kolaborasyon pil patnè. Gen plis "
+"pase dis distribitè anndan antrepriz la. Depi plis pase 20 lane, anterpriz la "
+"kreye relasyon ak Redat SpA, Diesel Components, Central Turbos, Southeast Power "
+"Systems ak reprezanta l Robert Bosch, Zexel, Stanadyne Ayiti. Anplis sa, antrepriz la "
+"se yon manm aktif nan asosiyasyon mondyal spesyalis pou dizèl (ADS)"

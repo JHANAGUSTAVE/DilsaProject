@@ -31,7 +31,7 @@ DEBUG = os.environ.get("DJANGO_DEBUG") == 'True'
 if DEBUG:
     ALLOWED_HOSTS = ['*']
 else:
-    ALLOWED_HOSTS = ['66.29.151.22', 'dieselinjectionlaboratory.com', 'www.dieselinjectionlaboratory.com']
+    ALLOWED_HOSTS = ['63.250.34.82', 'dieselinjectionlaboratory.com', 'www.dieselinjectionlaboratory.com']
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = config('EMAIL_HOST')
