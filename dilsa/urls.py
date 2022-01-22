@@ -18,10 +18,18 @@ from django.urls import path, include
 from core import views as core_views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.sitemaps.views import sitemap
+from .sitemaps import StaticViewSitemap, ProductSitemap
+from django.contrib.sitemaps import GenericSitemap
 
+sitemaps = {
+    'static': StaticViewSitemap,
+    'products': ProductSitemap,
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
     path('', core_views.home, name='home'),
     path('contact/', core_views.contact, name='contact'),
     # path('i18n/', include('django.conf.urls.i18n')),
